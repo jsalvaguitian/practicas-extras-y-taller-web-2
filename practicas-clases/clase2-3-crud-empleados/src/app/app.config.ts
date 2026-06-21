@@ -5,6 +5,9 @@ import { routes } from './app.routes';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura'
 
+//SI O SI IMPORTARLO SINO NO FUNCIONA
+import { provideHttpClient, withFetch } from '@angular/common/http';
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -13,6 +16,8 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: Aura
       }
-    })
+    }),
+    provideHttpClient(withFetch())//INYECTO HTTPCLIENT
+
   ]
 };

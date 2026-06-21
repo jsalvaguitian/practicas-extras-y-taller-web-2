@@ -1,0 +1,15 @@
+<!-- llamamos a cada componente por etiqueta en diferentes seccion ejemplo -->
+<!-- seccion de filtro -->
+<p>Spinner: {{ spinner }}</p>
+<!--componente bonito de spinner para que no se desepere el usuario (como lo vamos a usar en diferentes lados se lo guarda en una carpeta en shared )-->
+@if(spinner==true){
+<app-spinner></app-spinner>
+
+}@else {
+<!-- seccion de tabla -->
+<app-tabla-empleado [empleados]="empleados()"></app-tabla-empleado>
+}
+
+
+
+<!-- ng g c modules/empleados/components/tabla-empleado -->
