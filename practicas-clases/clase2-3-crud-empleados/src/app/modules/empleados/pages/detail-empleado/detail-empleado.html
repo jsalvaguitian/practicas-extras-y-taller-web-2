@@ -1,1 +1,23 @@
-<p>detail-empleado works!</p>
+@if(spinner){
+    <app-spinner></app-spinner>
+}@else {
+    <div class="row">
+        <div class="col">
+            <h1>Detalle de empleado</h1>
+        </div>
+        <div class="col text-end">
+            <p-button [routerLink]="['/empleados/list-empleados']" icon= "pi pi-undo"></p-button>
+        </div>
+    </div>
+
+    <div class="row mt-1">
+        <div class="col">
+            <h3>Nombre : {{empleado.nombre}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3>Apellido : {{empleado.apellido}}</h3>
+        </div>
+    </div>
+}

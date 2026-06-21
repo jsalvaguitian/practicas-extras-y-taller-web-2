@@ -63,8 +63,8 @@ export class EmpleadosService {
     return of<Empleado>(this.empleados[0])
   }
 
-  crearEmpleado(){
-    return of([])
+  crearEmpleado(empleado: Empleado){
+    return of(this.empleados[0])
   }
 
   updateEmpleado(){
