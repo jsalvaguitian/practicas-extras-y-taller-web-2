@@ -1,1 +1,34 @@
-<p>form-empleado works!</p>
+<form [formGroup]="form" (ngSubmit)="sendEmpleado()">
+    <div class="row">
+        <div class="col">
+            <label for="nombre">Nombre: </label>
+            <input type="text" formControlName = "nombre"> <!--formControlName debe recibir el MISMO nombre que esta en el ts de form group para que se vinculen-->
+
+            @if(form.get('nombre')?.hasError('required') && form.get('nombre')?.touched){
+                <span class="text-danger"> Esta campo es requerido</span>
+            }
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <label for="nombre">Apellido: </label>
+            <input type="text" pInputText formControlName = "apellido"> <!--formControlName debe recibir el MISMO nombre que esta en el ts de form group para que se vinculen-->
+
+            @if(form.get('apellido')?.hasError('required') && form.get('apellido')?.touched){
+                <span class="text-danger"> Esta campo es requerido</span>
+            }
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <label for="nombre">Nombre: </label>
+            <p-select [options]="cities" formControlName="empresa" optionLabel="name" placeholder="Selecciona una empresa" class="w-full md:w-56" />
+
+            @if(form.get('nombre')?.hasError('required') && form.get('nombre')?.touched){
+                <span class="text-danger"> Esta campo es requerido</span>
+            }
+        </div>
+    </div>
+</form>

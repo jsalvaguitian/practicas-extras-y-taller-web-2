@@ -1,0 +1,53 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  /* para que podamos trabajar con node.js con lenguaje typescript
+  tenemos que ghacer ciertas configuraciones:
+  1. Instalar dependencia typescript:  npm i -D typescript @types/node tsx
+  2. Ejecutar tal comando: npx tsc --init
+  3. Descomentar dos lineas de este archivo que se creo apartir del anterior comamdo
+  4. Descomentar 
+   "rootDir": "./src", este porque es donde vamos a tener nuestros controladores, servicios, y el index porque sino esta ahi no lo reconoce
+     "outDir": "./dist", //va estar todo lo que va en produccion
+  */
+  "compilerOptions": {
+    // File Layout
+     "rootDir": "./src",
+     "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "nodenext",
+    "target": "esnext",
+    //"types": [],
+    // For nodejs:
+     "lib": ["esnext"],
+     "types": ["node"],
+    // and npm install -D @types/node
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+  }
+}
